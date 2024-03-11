@@ -9,7 +9,7 @@ export function Input({text}: InputProps){
     return(
         <View>
             <InputText>{text}</InputText>
-            <InputStyle/>
+            <InputStyle underlineColorAndroid="transparent"/>
         </View>
     );
         

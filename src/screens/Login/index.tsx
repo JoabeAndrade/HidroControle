@@ -1,17 +1,31 @@
-import { Container, ImageLogo } from "./styles";
+import { Container, ImageLogo, ButtonSenhaText, ButtonSenha, ButtonCadastroText, ButtonCadastro, ButtonExemplo } from "./styles";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { Image } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 const LogoImg = require("../../assets/Logo.png");
 
 export function Login(){
     return(
-        <Container colors={["#4476D9", "#ffffff"]}>
+        <Container colors={["#729ef7", "#ffffff"]}>
             <ImageLogo source={LogoImg}/>
             <Input text="CPF/CNPJ"/>
             <Input text="SENHA"/>
+
+            <ButtonSenha>
+                <TouchableOpacity>
+                    <ButtonSenhaText>Esqueci minha senha</ButtonSenhaText>
+                </TouchableOpacity>
+            </ButtonSenha>
+            
             <Button text="Entrar"/>
+            <ButtonCadastro>
+                <Text>Não possui uma conta ?
+                    <TouchableOpacity>
+                        <ButtonCadastroText>Cadastre - se</ButtonCadastroText>
+                    </TouchableOpacity>
+                </Text>
+            </ButtonCadastro>
         </Container>
         
     );
