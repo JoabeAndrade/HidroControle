@@ -4,17 +4,15 @@ import { InputText, InputStyle } from "./styles";
 interface InputProps{
     text: string;
     place: string;
-    type: string;
 }
 
-export function Input({text, place, type}: InputProps){
+export function Input({text, place}: InputProps){
     return(
         <View>
             <InputText>{text}</InputText>
             <InputStyle 
             underlineColorAndroid="transparent" 
-            placeholder={place}
-            keyboardType={type}/>
+            placeholder={place}/>
         </View>
     );
         

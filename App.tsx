@@ -2,11 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Login } from './src/screens/Login';
 import { UserRegister } from './src/screens/UserResgiter';
+import { AddressRegister } from './src/screens/AddressRegister';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <UserRegister/>
+      <AddressRegister/>
+      {/* <UserRegister/> */}
       <StatusBar style="auto" />
     </View>
   );
