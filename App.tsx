@@ -6,7 +6,7 @@ import { UserRegister } from './src/screens/UserResgiter';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Login/>
+      <UserRegister/>
       <StatusBar style="auto" />
     </View>
   );

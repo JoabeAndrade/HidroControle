@@ -9,7 +9,7 @@ export function Login(){
     return(
         <Container colors={["#729ef7", "#ffffff"]}>
             <ImageLogo source={LogoImg}/>
-            <Input text="CPF/CNPJ"/>
+            <Input text="CPF/CNPJ" place="XXX.XXX.XXX-XX" type="numeric"/>
             <Input text="SENHA"/>
 
             <ButtonSenha>

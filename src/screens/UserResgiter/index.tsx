@@ -8,7 +8,7 @@ export function UserRegister(){
     return(
         <Container colors={["#729ef7", "#ffffff"]}>
             <Image source={LogoImg}/>
-            <Input text="Nome do titular"/>
+            <Input text="Nome do titular" />
             <Input text="CPF/CNPJ"/>
             <Input text="Data de Nascimento"/>
             <Input text="Email"/>
