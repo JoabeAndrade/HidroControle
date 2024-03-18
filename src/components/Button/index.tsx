@@ -6,8 +6,9 @@ interface ButtonProps {
 }
 
 export function Button({text, onPress}: ButtonProps){
+    
     return(
-        <StyleButton>
+        <StyleButton onPress=()>
             <TextButton>{text}</TextButton>
         </StyleButton>
     );

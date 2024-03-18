@@ -1,19 +1,9 @@
-import { View } from "react-native";
-import { InputText, InputStyle } from "./styles";
+import { InputStyle } from "./styles";
 
-interface InputProps{
-    text: string;
-    place: string;
-}
 
-export function Input({text, place}: InputProps){
+export function Input(){
     return(
-        <View>
-            <InputText>{text}</InputText>
-            <InputStyle 
-            underlineColorAndroid="transparent" 
-            placeholder={place}/>
-        </View>
+        <InputStyle/>
     );
         
         
