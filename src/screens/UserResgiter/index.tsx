@@ -1,22 +1,101 @@
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
-import { Container, InputStyles, InputTitle } from "./styles";
-import { Image } from "react-native";
+import { Container, TextErrorRegister, TitleText, LinearGradientRegister, InputStylesRegister, ButtonStylesRegister, ButtonTextRegister} from "./styles";
+import { Image, ScrollView } from "react-native";
+import { useForm, Controller } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const LogoImg = require("../../assets/Logo.png");
 
+const schema = yup.object({
+    username: yup.string().required("Informe seu nome"),
+    cpf_cnpj: yup.string().min(11, "Dados inválido").max(14, "Dados inválido").required("Informe seu CPF ou CNPJ"),
+    email: yup.string().email("Email inválido").required("Informe seu email"),
+    password: yup.string().min(6, "A senha deve conter pelos 6 dígitos").required("Informe sua senha")
+})
+
+type FormData = {
+    username: string;
+    cpf_cnpj: string;
+    email: string;
+    password: string;
+}
+
 export function UserRegister(){
+    const {control, handleSubmit, formState: {errors}} = useForm<FormData>({
+        resolver: yupResolver(schema)
+    })
+
+    function handleRegister(data: FormData){
+        console.log(data);
+    }
     return(
-        <Container colors={["#729ef7", "#ffffff"]}>
-            <Image source={LogoImg} style={{ width: 120, height: 120}}/>
-            <InputStyles>
-                <InputTitle>Cadastro de Usuário</InputTitle>
-                <Input text="Nome do titular" place=""/>
-                <Input text="CPF/CNPJ" place="XXX.XXX.XXX-XX"/>
-                <Input text="Email" place="seuemail@gmail.com"/>
-                <Input text="Senha" place=""/>
-            </InputStyles>
-            <Button text="Cadastrar"/>
-        </Container>
+        <LinearGradientRegister colors={["#729ef7", "#ffffff"]}>
+            <Image source={LogoImg} style={{ width: 100, height: 100}}/>
+            <Container>
+                <TitleText>Cadastro de Usuário</TitleText>
+                <ScrollView>
+                    <Controller
+                        control={control}
+                        name="username"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesRegister
+                                style={{borderWidth: errors.username && 1, borderColor: errors.username && "#ff375b"}}
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Digite seu nome"
+                            />
+                        )}
+                    />
+                    {errors.username && <TextErrorRegister>{errors.username?.message}</TextErrorRegister>}
+
+                    <Controller
+                        control={control}
+                        name="cpf_cnpj"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesRegister
+                                style={{borderWidth: errors.cpf_cnpj && 1, borderColor: errors.cpf_cnpj && "#ff375b"}}
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Digite seu CPF ou CNPJ"
+                            />
+                        )}
+                    />
+                    {errors.cpf_cnpj && <TextErrorRegister>{errors.cpf_cnpj?.message}</TextErrorRegister>}
+
+                    <Controller
+                        control={control}
+                        name="email"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesRegister
+                                style={{borderWidth: errors.email && 1, borderColor: errors.email && "#ff375b"}}
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Digite seu email"
+                            />
+                        )}
+                    />
+                    {errors.email && <TextErrorRegister>{errors.email?.message}</TextErrorRegister>}
+
+                    <Controller
+                        control={control}
+                        name="password"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesRegister
+                                style={{borderWidth: errors.password && 1, borderColor: errors.password && "#ff375b"}}
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Digite sua senha"
+                            />
+                        )}
+                    />
+                    {errors.password && <TextErrorRegister>{errors.password?.message}</TextErrorRegister>}
+
+                    <ButtonStylesRegister onPress={handleSubmit(handleRegister)}>
+                        <ButtonTextRegister>Cadastrar</ButtonTextRegister>
+                    </ButtonStylesRegister>
+                </ScrollView>
+            </Container>
+        </LinearGradientRegister>
+        
     );
 }

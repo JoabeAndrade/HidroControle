@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { InputStylesLogin, ViewRegister, ButtonStylesLogin, ButtonTextLogin, TextErrorLogin, LinearGradientLogin, ButtonTextForgets, ButtonStylesForgets } from "./styles";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Text, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
 
 const LogoImg = require("../../assets/Logo.png");
 const schema = yup.object({

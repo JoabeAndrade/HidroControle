@@ -8,8 +8,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <AddressRegister/> */}
-      {/* <UserRegister/> */}
-      <Login />
+      <UserRegister/>
+      {/* <Login /> */}
       <StatusBar style="auto" />
     </View>
   );
