@@ -1,22 +1,115 @@
-import { Image } from "react-native";
-import { ContainerAddress, InputStylesAddress, InputTitleAddress } from "./styles";
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
+import { Image, ScrollView } from "react-native";
+import { LinearGradientAddress, Container, InputStylesAddress } from "./styles";
+import { Title } from "../../components/Title";
+import { useForm, Controller } from "react-hook-form";
 
 const ImgLogo = require("../../assets/Logo.png");
 
 export function AddressRegister(){
+    const {control, handleSubmit, formState: {errors}} = useForm({})
     return(
-        <ContainerAddress colors={["#729ef7", "#ffffff"]}>
-            <Image source={ImgLogo} style={{ width: 120, height: 120 }} />
-            <InputStylesAddress>
-                <InputTitleAddress>Cadastro de Endereço</InputTitleAddress>
-                <Input text="CEP" place=""/>
-                <Input text="Bairro" place=""/>
-                <Input text="Rua" place=""/>
-                <Input text="Complemento" place=""/>
-            </InputStylesAddress>
-            <Button text="Avançar"/>
-        </ContainerAddress>
+        <LinearGradientAddress colors={["#729ef7", "#ffffff"]}>
+            <Image source={ImgLogo} style={{ width: 100, height: 100 }} />
+            <Title title="Cadastro de Endereço"/>
+            <Container>
+                <ScrollView>
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
+                        name="cep"
+                        render={({ field: { onChange, value } }) => (
+                            <InputStylesAddress 
+                                onChangeText={onChange}
+                                value={value}
+                                placeholder="Informe seu CEP"
+                            />
+                        )}
+                    />
+                </ScrollView>
+            </Container>
+        </LinearGradientAddress>
     );
 }

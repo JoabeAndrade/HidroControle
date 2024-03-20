@@ -11,11 +11,6 @@ export const LinearGradientLogin = styled(LinearGradient)`
 export const Container = styled.View`
     width: 260px;
 `
-
-export const ImageLogo = styled.Image`
-    margin-bottom: 30px;
-`
-
 export const InputStylesLogin = styled.TextInput`
     background-color: #729ef7;
     width: 260px;
@@ -42,6 +37,7 @@ export const ButtonStylesForgets = styled.TouchableOpacity`
 export const ButtonTextForgets = styled.Text`
     text-decoration: underline;
     font-weight: bold;
+    color: #4476D9;
 `
 
 export const ButtonStylesLogin = styled.TouchableOpacity`
@@ -57,9 +53,15 @@ export const ButtonTextLogin = styled.Text`
     font-weight: bold;
     font-size: 16px;
 `
-
 export const ViewRegister = styled.View`
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
+    gap: 5px;
     margin-top: 30px;
+`
+
+export const TextRegister = styled.Text`
+    text-decoration: underline;
+    color: #4476D9;
+    font-weight: bold;
 `

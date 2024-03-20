@@ -1,8 +1,9 @@
-import { Container, TextErrorRegister, TitleText, LinearGradientRegister, InputStylesRegister, ButtonStylesRegister, ButtonTextRegister} from "./styles";
+import { Container, TextErrorRegister, LinearGradientRegister, InputStylesRegister, ButtonStylesRegister, ButtonTextRegister} from "./styles";
 import { Image, ScrollView } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Title } from "../../components/Title";
 
 const LogoImg = require("../../assets/Logo.png");
 
@@ -32,7 +33,7 @@ export function UserRegister(){
         <LinearGradientRegister colors={["#729ef7", "#ffffff"]}>
             <Image source={LogoImg} style={{ width: 100, height: 100}}/>
             <Container>
-                <TitleText>Cadastro de Usuário</TitleText>
+                <Title title="Cadastro de Usuário"/>
                 <ScrollView>
                     <Controller
                         control={control}

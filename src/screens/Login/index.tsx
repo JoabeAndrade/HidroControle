@@ -1,9 +1,10 @@
-import { Container, ImageLogo } from "./styles";
+import { Container } from "./styles";
 import { useForm, Controller } from "react-hook-form";
-import { InputStylesLogin, ViewRegister, ButtonStylesLogin, ButtonTextLogin, TextErrorLogin, LinearGradientLogin, ButtonTextForgets, ButtonStylesForgets } from "./styles";
+import { InputStylesLogin, ViewRegister, TextRegister, ButtonStylesLogin, ButtonTextLogin, TextErrorLogin, LinearGradientLogin, ButtonTextForgets, ButtonStylesForgets } from "./styles";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Text } from "react-native";
+import { Text, TouchableOpacity, Image } from "react-native";
+import { Title } from "../../components/Title";
 
 const LogoImg = require("../../assets/Logo.png");
 const schema = yup.object({
@@ -26,7 +27,8 @@ export function Login(){
     }
     return(
         <LinearGradientLogin colors={["#729ef7", "#ffffff"]}>
-            <ImageLogo source={LogoImg} style={{ width: 100, height: 100}}/>
+            <Image source={LogoImg} style={{ width: 100, height: 100}}/>
+            <Title title="Bem Vindo(a)"/>
             <Container>
                 <Controller 
                     control={control}
@@ -66,10 +68,12 @@ export function Login(){
                 </ButtonStylesLogin>
                 
                 <ViewRegister>
-                    <Text style={{marginBottom: 30}}>Ou</Text>
-                    <ButtonStylesLogin>
-                        <ButtonTextLogin>Cadastre - se</ButtonTextLogin>
-                    </ButtonStylesLogin>
+                    <Text>Ainda não possui cadastro ?</Text>
+                    <TouchableOpacity>
+                        <TextRegister>
+                            Cadastre - se
+                        </TextRegister>
+                    </TouchableOpacity>
                 </ViewRegister>
                 
             </Container>
