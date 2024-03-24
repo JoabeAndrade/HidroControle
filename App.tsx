@@ -7,8 +7,8 @@ import { AddressRegister } from './src/screens/AddressRegister';
 export default function App() {
   return (
     <View style={styles.container}>
-      <AddressRegister/>
-      {/* <UserRegister/> */}
+      {/* <AddressRegister/> */}
+      <UserRegister/>
       {/* <Login /> */}
       <StatusBar style="auto" />
     </View>

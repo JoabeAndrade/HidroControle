@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Text, TouchableOpacity, Image } from "react-native";
 import { Title } from "../../components/Title";
+import { TextError } from "../../components/TextErrorMessage/styles";
 
 const LogoImg = require("../../assets/Logo.png");
 const schema = yup.object({
@@ -42,7 +43,7 @@ export function Login(){
                         />
                     )}
                 />
-                {errors.email && <TextErrorLogin>{errors.email?.message}</TextErrorLogin>}
+                {errors.email && <TextError>{errors.email?.message}</TextError>}
 
                 <Controller 
                     control={control}
