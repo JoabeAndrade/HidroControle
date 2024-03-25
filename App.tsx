@@ -3,13 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Login } from './src/screens/Login';
 import { UserRegister } from './src/screens/UserResgiter';
 import { AddressRegister } from './src/screens/AddressRegister';
+import { Home } from './src/screens/Home';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <AddressRegister/> */}
-      <UserRegister/>
+      {/* <UserRegister/> */}
       {/* <Login /> */}
+      <Home/>
       <StatusBar style="auto" />
     </View>
   );
