@@ -11,7 +11,7 @@ export default function App() {
       {/* <AddressRegister/> */}
       {/* <UserRegister/> */}
       {/* <Login /> */}
-      <Home/>
+      {/* <Home/> */}
       <StatusBar style="auto" />
     </View>
   );

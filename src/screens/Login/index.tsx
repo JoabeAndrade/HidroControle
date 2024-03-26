@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Text, TouchableOpacity, Image } from "react-native";
 import { Title } from "../../components/Title";
 import { TextError } from "../../components/TextErrorMessage/styles";
+import axios from "axios";
 
 const LogoImg = require("../../assets/Logo.png");
 const schema = yup.object({
@@ -23,9 +24,21 @@ export function Login(){
         resolver: yupResolver(schema)
     })
 
-    function handleSignIn(data: FormData){
-        console.log(data)
+    async function handleSignIn(data: FormData){
+        try {
+            const response = await axios.post("http://localhost:3000/api/login", {
+                email: data.email,
+                password: data.password
+            })
+            const token = response.data.accessToken;
+            console.log(response) 
+            localStorage.setItem("token", token)
+        } catch (error: any) {
+            alert(error.response.data.message)
+        }
+        
     }
+
     return(
         <LinearGradientLogin colors={["#729ef7", "#ffffff"]}>
             <Image source={LogoImg} style={{ width: 100, height: 100}}/>
