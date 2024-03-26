@@ -4,6 +4,7 @@ import { Login } from './src/screens/Login';
 import { UserRegister } from './src/screens/UserResgiter';
 import { AddressRegister } from './src/screens/AddressRegister';
 import { Home } from './src/screens/Home';
+import { Profile } from './src/screens/Profile';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       {/* <UserRegister/> */}
       {/* <Login /> */}
       {/* <Home/> */}
+      <Profile/>
       <StatusBar style="auto" />
     </View>
   );
