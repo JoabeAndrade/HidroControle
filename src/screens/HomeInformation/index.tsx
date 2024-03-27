@@ -1,13 +1,12 @@
-import { Image, ScrollView } from "react-native";
-import { LinearGradientAddress, ButtonTextAddress, ButtonStylesAddress, Container, InputStylesAddress } from "./styles";
-import { Title } from "../../components/Title";
+import { Header } from "../../components/Header";
+import { ConatinerHomeInfo } from "./styles";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
+import { ScrollView } from "react-native";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { TextError } from "../../components/TextErrorMessage/styles";
+import { ButtonTextAddress, ButtonStylesAddress, Container, InputStylesAddress } from "../AddressRegister/styles";
 
-
-const ImgLogo = require("../../assets/Logo.png");
 const schema = yup.object({
     cep: yup.string().max(9, "CEP inválido!").required("Informe seu CEP!"),
     neighborhood: yup.string().required("Informe seu Bairro!"),
@@ -28,20 +27,19 @@ type FormData = {
     quant: number;
 }
 
-export function AddressRegister(){
+export function HomeInformation(){
     const {control, handleSubmit, formState: {errors}} = useForm<FormData>({
         resolver: yupResolver(schema)
     })
 
-    function handleSignIn(data: FormData){
+    function handleSave(data: FormData){
         console.log(data)
     }
     return(
-        <LinearGradientAddress colors={["#729ef7", "#ffffff"]}>
-            <Image source={ImgLogo} style={{ width: 100, height: 100 }} />
-            <Title title="Cadastro de Endereço"/>
-            <Container>
-                <ScrollView style={{height: 300}}>
+        <ConatinerHomeInfo>
+            <Header text="Informações Residencial"/>
+            <Container style={{marginTop: 100}}>
+                <ScrollView style={{height: 400}}>
                     <Controller
                         control={control}
                         name="cep"
@@ -141,10 +139,10 @@ export function AddressRegister(){
                     {errors.quant && <TextError>{errors.quant?.message}</TextError>}
                 </ScrollView>
 
-                <ButtonStylesAddress onPress={handleSubmit(handleSignIn)}>
-                    <ButtonTextAddress>Cadastrar</ButtonTextAddress>
+                <ButtonStylesAddress onPress={handleSubmit(handleSave)} style={{marginTop: 50}}>
+                    <ButtonTextAddress>Salvar</ButtonTextAddress>
                 </ButtonStylesAddress>
             </Container>
-        </LinearGradientAddress>
+        </ConatinerHomeInfo>
     );
 }

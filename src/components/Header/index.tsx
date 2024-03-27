@@ -11,10 +11,10 @@ export function Header({text}: HeaderProps){
         <ConatinerHeader>
             <HeaderTitle>
                 <TouchableOpacity>
-                    <AntDesign name="doubleleft" size={28} color="#ffffff" style={{marginLeft: 15}}/>
+                    <AntDesign name="doubleleft" size={18} color="#ffffff" style={{marginLeft: 15}}/>
                 </TouchableOpacity>
                 <View style={{width: "100%", alignItems: "center", justifyContent: "center", position: "absolute"}}>
-                    <Text style={{fontWeight: "bold", fontSize: 24, color: "#ffffff",}}>{text}</Text>
+                    <Text style={{fontWeight: "bold", fontSize: 16, color: "#ffffff",}}>{text}</Text>
                 </View>
             </HeaderTitle>
         </ConatinerHeader>

@@ -7,7 +7,7 @@ export const ConatinerHeader = styled.View`
 export const HeaderTitle = styled.View`
     background-color: #4476D9;
     width: 100%;
-    height: 120px;
+    height: 70px;
     flex-direction: row;
     align-items: center;
 `

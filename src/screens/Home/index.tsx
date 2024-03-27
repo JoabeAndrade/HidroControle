@@ -25,10 +25,10 @@ export function Home(){
                 </ButtonAccount>
             </DashBoard>
             <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: 25}}>
-                <Image source={Symbol} style={{width: 80, height: 80}}/>
+                <Image source={Symbol} style={{width: 60, height: 60}}/>
                 <View>
-                    <Text style={{fontSize: 40, color: "#4476D9"}}>26<Text style={{fontSize: 16}}> Litros</Text></Text>
-                    <Text style={{fontSize: 20, color: "#4476D9"}}>Consumidos</Text>
+                    <Text style={{fontSize: 24, color: "#4476D9"}}>26<Text style={{fontSize: 16}}> Litros</Text></Text>
+                    <Text style={{fontSize: 18, color: "#4476D9"}}>Consumidos</Text>
                 </View>
             </View>
             <View style={{justifyContent: "flex-end", flex: 1}}>

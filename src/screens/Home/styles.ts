@@ -14,7 +14,7 @@ export const TitleHome = styled.View`
 `
 export const DashBoard = styled.View`
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-color: #4476D9;
     align-items: center;
     justify-content: center;
