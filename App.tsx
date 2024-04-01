@@ -7,6 +7,7 @@ import { Home } from './src/screens/Home';
 import { Profile } from './src/screens/Profile';
 import { PersonalInformation } from './src/screens/PersonalInformation';
 import { HomeInformation } from './src/screens/HomeInformation';
+import { ForgotPassword } from './src/screens/ForgotPassword/indes';
 
 export default function App() {
   return (
@@ -14,10 +15,11 @@ export default function App() {
       {/* <AddressRegister/> */}
       {/* <UserRegister/> */}
       {/* <Login /> */}
-      <Home/>
+      {/* <Home/> */}
       {/* <PersonalInformation/> */}
       {/* <Profile/> */}
       {/* <HomeInformation/> */}
+      <ForgotPassword/>
       <StatusBar hidden/>
     </View>
   );
