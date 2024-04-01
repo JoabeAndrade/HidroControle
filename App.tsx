@@ -14,7 +14,7 @@ export default function App() {
       {/* <AddressRegister/> */}
       {/* <UserRegister/> */}
       {/* <Login /> */}
-      {/* <Home/> */}
+      <Home/>
       {/* <PersonalInformation/> */}
       {/* <Profile/> */}
       {/* <HomeInformation/> */}

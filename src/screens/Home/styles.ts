@@ -10,7 +10,6 @@ export const TitleHome = styled.View`
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
 `
 export const DashBoard = styled.View`
     width: 100%;
@@ -25,4 +24,10 @@ export const ButtonAccount = styled.TouchableOpacity`
     height: 100px;
     background-color: #ffffff;
     border-radius: 8px;
+`
+
+export const ContainerGrafic = styled.View`
+    width: 400px;
+    justify-content: center;
+    align-items: center
 `

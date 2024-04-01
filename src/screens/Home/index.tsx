@@ -1,6 +1,6 @@
-import { ContainerHome, TitleHome, ButtonAccount, DashBoard } from "./styles";
+import { ContainerHome, TitleHome, ButtonAccount, DashBoard, ContainerGrafic } from "./styles";
 import { Footer } from "../../components/Footer";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Title } from "../../components/Title";
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -24,6 +24,7 @@ export function Home(){
                     <Text style={{paddingLeft: 10, fontWeight: "bold", marginTop: 20, fontSize: 12}}>Vence em 8 dias</Text>
                 </ButtonAccount>
             </DashBoard>
+
             <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: 25}}>
                 <Image source={Symbol} style={{width: 60, height: 60}}/>
                 <View>
@@ -31,6 +32,18 @@ export function Home(){
                     <Text style={{fontSize: 18, color: "#4476D9"}}>Consumidos</Text>
                 </View>
             </View>
+
+            <View style={{flexDirection: "row", justifyContent: "center", marginTop: 100, gap: 20}}>
+                <Text>Último seis meses</Text>
+                <TouchableOpacity>
+                    <Text>Ver mais</Text>
+                </TouchableOpacity>
+            </View>
+            
+            <View>
+                
+            </View>
+ 
             <View style={{justifyContent: "flex-end", flex: 1}}>
                 <Footer/>
             </View>
