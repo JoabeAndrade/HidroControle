@@ -9,6 +9,7 @@ import { PersonalInformation } from './src/screens/PersonalInformation';
 import { HomeInformation } from './src/screens/HomeInformation';
 import { ForgotPassword } from './src/screens/ForgotPassword/indes';
 import { Analysis } from './src/screens/Analysis/indes';
+import { PaymentHistory } from './src/screens/PaymentHistory';
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
       {/* <Profile/> */}
       {/* <HomeInformation/> */}
       {/* <ForgotPassword/> */}
-      <Analysis/>
+      {/* <Analysis/> */}
+      <PaymentHistory/>
       <StatusBar hidden/>
     </View>
   );
