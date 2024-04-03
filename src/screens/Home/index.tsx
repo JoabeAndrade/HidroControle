@@ -1,9 +1,8 @@
-import { ContainerHome, TitleHome, ButtonAccount, DashBoard, ContainerGrafic } from "./styles";
+import { ContainerHome, TitleHome, ButtonAccount, DashBoard, GraficFrontWater, GraficBackWater } from "./styles";
 import { Footer } from "../../components/Footer";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Title } from "../../components/Title";
-import { MaterialIcons } from '@expo/vector-icons';
-
+import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 const LogoImg = require("../../assets/Logo.png");
 const Symbol = require("../../assets/material-symbols_water-green.png");
 
@@ -33,11 +32,66 @@ export function Home(){
                 </View>
             </View>
 
-            <View style={{flexDirection: "row", justifyContent: "center", marginTop: 100, gap: 20}}>
-                <Text>Último seis meses</Text>
-                <TouchableOpacity>
-                    <Text>Ver mais</Text>
-                </TouchableOpacity>
+            <View style={{alignItems: "center"}}>
+                <View style={{flexDirection: "row", justifyContent: "space-between", marginTop: 100, width: 320}}>
+                    <Text>Último seis meses</Text>
+                    <TouchableOpacity style={{flexDirection: "row", alignItems: "center"}}>
+                        <Text>Ver mais</Text>
+                        <AntDesign name="right" size={16} color="black" />
+                    </TouchableOpacity>
+                </View>
+            </View>
+            
+            <View style={{alignItems: "center", marginTop: 5}}>
+                <View style={{backgroundColor: "#ffffff", width: 320, height: 190}}>
+                    <View style={{alignItems: "center", flex: 1, justifyContent: "center", flexDirection:"row"}}>
+                        <View style={{flexDirection: "row", gap: 20}}>
+                            <View>
+                                <GraficBackWater>
+                                    <GraficFrontWater/>
+                                </GraficBackWater>
+                                <Text>JAN</Text>
+                            </View>
+
+                            <View>
+                                <GraficBackWater>
+                                    <GraficFrontWater/>
+                                </GraficBackWater>
+                                <Text>FEV</Text>
+                            </View>
+
+                            <View>
+                                <GraficBackWater>
+                                    <GraficFrontWater/>
+                                </GraficBackWater>
+                                <Text>MAR</Text>
+                            </View>
+
+                            <View>
+                                <GraficBackWater>
+                                    <GraficFrontWater/>
+                                </GraficBackWater>
+                                <Text>ABR</Text>
+                            </View>
+
+                            <View>
+                                <GraficBackWater>
+                                    <GraficFrontWater/>
+                                </GraficBackWater>
+                                <Text>MAI</Text>
+                            </View>
+
+                            <View>
+                                <GraficBackWater>
+                                    <GraficFrontWater/>
+                                </GraficBackWater>
+                                <Text>JUN</Text>
+                            </View>
+                        
+                        </View>
+                        
+                    </View>
+                </View>
             </View>
             
             <View>

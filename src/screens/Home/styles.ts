@@ -31,3 +31,18 @@ export const ContainerGrafic = styled.View`
     justify-content: center;
     align-items: center
 `
+
+export const GraficBackWater = styled.View`
+    background-color: #CAEDF8;
+    width: 30px;
+    height: 120px;
+    border-radius: 8px;
+    justify-content: flex-end;
+`
+
+export const GraficFrontWater = styled.View`
+    background-color: #4476D9;
+    width: 30px;
+    height: 80px;
+    border-radius: 8px;
+`
