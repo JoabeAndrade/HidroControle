@@ -24,8 +24,8 @@ export function Home(){
                 </ButtonAccount>
             </DashBoard>
 
-            <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: 25}}>
-                <Image source={Symbol} style={{width: 60, height: 60}}/>
+            <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: 40}}>
+                <Image source={Symbol} style={{width: 80, height: 60}}/>
                 <View>
                     <Text style={{fontSize: 24, color: "#4476D9"}}>26<Text style={{fontSize: 16}}> Litros</Text></Text>
                     <Text style={{fontSize: 18, color: "#4476D9"}}>Consumidos</Text>
@@ -33,7 +33,7 @@ export function Home(){
             </View>
 
             <View style={{alignItems: "center"}}>
-                <View style={{flexDirection: "row", justifyContent: "space-between", marginTop: 100, width: 320}}>
+                <View style={{flexDirection: "row", justifyContent: "space-between", marginTop: 80, width: 320}}>
                     <Text>Último seis meses</Text>
                     <TouchableOpacity style={{flexDirection: "row", alignItems: "center"}}>
                         <Text>Ver mais</Text>
@@ -48,42 +48,42 @@ export function Home(){
                         <View style={{flexDirection: "row", gap: 20}}>
                             <View>
                                 <GraficBackWater>
-                                    <GraficFrontWater/>
+                                    <GraficFrontWater style={{height: 80}}/>
                                 </GraficBackWater>
                                 <Text>JAN</Text>
                             </View>
 
                             <View>
                                 <GraficBackWater>
-                                    <GraficFrontWater/>
+                                    <GraficFrontWater style={{height: 80}}/>
                                 </GraficBackWater>
                                 <Text>FEV</Text>
                             </View>
 
                             <View>
                                 <GraficBackWater>
-                                    <GraficFrontWater/>
+                                    <GraficFrontWater style={{height: 80}}/>
                                 </GraficBackWater>
                                 <Text>MAR</Text>
                             </View>
 
                             <View>
                                 <GraficBackWater>
-                                    <GraficFrontWater/>
+                                    <GraficFrontWater style={{height: 80}}/>
                                 </GraficBackWater>
                                 <Text>ABR</Text>
                             </View>
 
                             <View>
                                 <GraficBackWater>
-                                    <GraficFrontWater/>
+                                    <GraficFrontWater style={{height: 80}}/>
                                 </GraficBackWater>
                                 <Text>MAI</Text>
                             </View>
 
                             <View>
                                 <GraficBackWater>
-                                    <GraficFrontWater/>
+                                    <GraficFrontWater style={{height: 80}}/>
                                 </GraficBackWater>
                                 <Text>JUN</Text>
                             </View>
