@@ -3,10 +3,15 @@ import { Footer } from "../../components/Footer";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Title } from "../../components/Title";
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../../../types/navigation";
 const LogoImg = require("../../assets/Logo.png");
 const Symbol = require("../../assets/material-symbols_water-green.png");
 
 export function Home(){
+    const navigator = useNavigation<NativeStackNavigationProp<RootStackParamList,'PaymentHistory' >>();
+    const navigatorAnalysis = useNavigation<NativeStackNavigationProp<RootStackParamList,'Analysis' >>();
     return(
         <ContainerHome>
             <TitleHome>
@@ -14,7 +19,7 @@ export function Home(){
                 <Title title="Hidro Controle"/>
             </TitleHome>
             <DashBoard>
-                <ButtonAccount>
+                <ButtonAccount onPress={() => navigator.navigate('PaymentHistory')}>
                     <Text style={{paddingLeft: 10, fontWeight: "bold", fontSize: 14}}>Fevereiro</Text>
                     <View style={{flexDirection: "row", gap: 10, alignItems: "center", justifyContent: "center", marginTop: 15}}>
                         <Text style={{fontWeight: "bold", fontSize: 18}}>R$ 154,65</Text>
@@ -35,7 +40,7 @@ export function Home(){
             <View style={{alignItems: "center"}}>
                 <View style={{flexDirection: "row", justifyContent: "space-between", marginTop: 80, width: 320}}>
                     <Text>Último seis meses</Text>
-                    <TouchableOpacity style={{flexDirection: "row", alignItems: "center"}}>
+                    <TouchableOpacity style={{flexDirection: "row", alignItems: "center"}} onPress={() => navigatorAnalysis.navigate('Analysis')}>
                         <Text>Ver mais</Text>
                         <AntDesign name="right" size={16} color="black" />
                     </TouchableOpacity>

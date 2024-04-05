@@ -7,6 +7,9 @@ import { Text, TouchableOpacity, Image } from "react-native";
 import { Title } from "../../components/Title";
 import { TextError } from "../../components/TextErrorMessage/styles";
 import axios from "axios";
+import { NavigationContainer, NavigationProp, useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp, createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RootStackParamList } from "../../../types/navigation";
 
 const LogoImg = require("../../assets/Logo.png");
 const schema = yup.object({
@@ -19,7 +22,9 @@ type FormData = {
     password: string;
 }
 
-export function Login(){
+export function Login({}){
+    const navigator = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Home'>>();
+    const navigatorRegister = useNavigation<NativeStackNavigationProp<RootStackParamList, 'AddressRegister'>>();
     const {control, handleSubmit, formState: { errors }} = useForm<FormData>({
         resolver: yupResolver(schema)
     })
@@ -77,13 +82,13 @@ export function Login(){
                     <ButtonTextForgets>Esqueci minha senha</ButtonTextForgets>
                 </ButtonStylesForgets>
 
-                <ButtonStylesLogin onPress={handleSubmit(handleSignIn)}>
+                <ButtonStylesLogin onPress={() => navigator.navigate('Home')}>
                     <ButtonTextLogin>Entrar</ButtonTextLogin>
                 </ButtonStylesLogin>
                 
                 <ViewRegister>
                     <Text>Ainda não possui cadastro ?</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigatorRegister.navigate('AddressRegister')}>
                         <TextRegister>
                             Cadastre - se
                         </TextRegister>

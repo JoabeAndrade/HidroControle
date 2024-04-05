@@ -3,22 +3,27 @@ import { Header } from "../../components/Header";
 import { ConatinerProfile, ProfileText } from "./styles";
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { Footer } from "../../components/Footer";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../../../types/navigation";
 
 export function Profile(){
+    const navigatorHomeInfo = useNavigation<NativeStackNavigationProp<RootStackParamList, 'HomeInformation'>>();
+    const navigatorPersonalInfo = useNavigation<NativeStackNavigationProp<RootStackParamList, 'PersonalInformation'>>();
     return(
         <ConatinerProfile>
             <Header text="Perfil"/>
             <View style={{width: 300}}>
                 <View style={{justifyContent: "space-between", alignItems: "center", marginTop: 60, flexDirection: "row"}}>
                     <ProfileText>Informações Pessoais</ProfileText>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigatorPersonalInfo.navigate('PersonalInformation')}>
                         <AntDesign name="caretright" size={28} color="black" />
                     </TouchableOpacity>
                 </View>
 
                 <View style={{justifyContent: "space-between", alignItems: "center", marginTop: 40, flexDirection: "row"}}>
                     <ProfileText>Informações Residencial</ProfileText>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigatorHomeInfo.navigate('HomeInformation')}>
                         <AntDesign name="caretright" size={28} color="black" />
                     </TouchableOpacity>
 

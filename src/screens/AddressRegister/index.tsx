@@ -5,6 +5,9 @@ import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { TextError } from "../../components/TextErrorMessage/styles";
+import { RootStackParamList } from "../../../types/navigation";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 
 
 const ImgLogo = require("../../assets/Logo.png");
@@ -29,6 +32,7 @@ type FormData = {
 }
 
 export function AddressRegister(){
+    const navigator = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Home'>>();
     const {control, handleSubmit, formState: {errors}} = useForm<FormData>({
         resolver: yupResolver(schema)
     })
@@ -141,7 +145,7 @@ export function AddressRegister(){
                     {errors.quant && <TextError>{errors.quant?.message}</TextError>}
                 </ScrollView>
 
-                <ButtonStylesAddress onPress={handleSubmit(handleSignIn)}>
+                <ButtonStylesAddress onPress={() => navigator.navigate('Home')}>
                     <ButtonTextAddress>Cadastrar</ButtonTextAddress>
                 </ButtonStylesAddress>
             </Container>
